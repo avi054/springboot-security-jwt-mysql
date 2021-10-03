@@ -1,8 +1,8 @@
 package edu.aviral.service;
 
-import edu.aviral.model.User;
+import edu.aviral.dto.UserDTO;
 
 public interface UserService {
 	
-	Integer saveUser(User user);		//return the primary key
+	Integer saveUser(UserDTO userDto);		//return the primary key
 }

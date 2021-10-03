@@ -1,4 +1,4 @@
-package edu.aviral.model;
+package edu.aviral.dao;
 
 import java.util.Set;
 

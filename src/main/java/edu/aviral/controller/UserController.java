@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.aviral.model.User;
+import edu.aviral.dto.UserDTO;
 import edu.aviral.service.UserService;
 
 @RestController
@@ -27,9 +27,9 @@ public class UserController {
 
 	// Creates and saves a new user in the database
 	@PostMapping(name = "/", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> saveUser(@RequestBody User user) {
+	public ResponseEntity<String> saveUser(@RequestBody UserDTO userDto) {
 
-		Integer id = userService.saveUser(user);
+		Integer id = userService.saveUser(userDto);
 		String body = "User '" + id + "'Created and Saved";
 		logger.info("{}", body);
 		return ResponseEntity.status(HttpStatus.CREATED).body(body);
