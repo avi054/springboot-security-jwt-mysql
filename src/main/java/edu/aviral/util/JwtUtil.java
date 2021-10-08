@@ -28,7 +28,7 @@ public class JwtUtil {
 					.setIssuedAt(new Date(System.currentTimeMillis()))
 					.setExpiration(new Date(System.currentTimeMillis()
 							+ TimeUnit.MINUTES.toMillis(15)))
-					.signWith(SignatureAlgorithm.HS256, secret)
+					.signWith(SignatureAlgorithm.HS256, secret.getBytes())
 					.compact();
 	}
 	
